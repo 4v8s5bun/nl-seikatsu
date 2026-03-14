@@ -91,6 +91,25 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
 .m-section .ref-links a{margin-right:1rem}
 .m-section ul{font-size:.85rem;color:var(--text2);line-height:1.65;margin:.4rem 0 .4rem 1.2rem}
 .m-section .m-score-info{background:#f9f9fb;padding:.5rem .8rem;border-radius:6px;font-size:.8rem;margin-top:.5rem}
+.filter-wrap{margin-bottom:1.2rem}
+.filter-toggle{background:var(--card);border:2px solid var(--border);border-radius:999px;padding:.4rem 1.1rem;font-size:.85rem;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;transition:all .2s}
+.filter-toggle:hover{border-color:#999}
+.filter-toggle.open{background:var(--text);color:#fff;border-color:var(--text)}
+.filter-toggle::before{content:'▼';font-size:.6rem;transition:transform .2s}
+.filter-toggle.open::before{transform:rotate(180deg)}
+.filter-panel{background:var(--card);border-radius:12px;padding:1rem 1.2rem;margin-top:.6rem;box-shadow:0 1px 3px rgba(0,0,0,.06);display:none;flex-direction:column;gap:.8rem}
+.filter-panel.open{display:flex}
+.filter-panel .fp-group{font-size:.82rem;padding-bottom:.7rem;border-bottom:1px solid #f0f0f0}
+.filter-panel .fp-group:last-child{border-bottom:none;padding-bottom:0}
+.filter-panel .fp-label{font-weight:600;font-size:.8rem;margin-bottom:.4rem;color:var(--text)}
+.filter-panel .fp-select-row{display:flex;align-items:center;gap:.5rem;margin-bottom:.3rem;flex-wrap:wrap}
+.filter-panel select{padding:.3rem .5rem;border:1.5px solid var(--border);border-radius:6px;font-size:.82rem;background:var(--card);color:var(--text);cursor:pointer;min-width:80px}
+.filter-panel select:focus{border-color:var(--coolblue);outline:none}
+.filter-panel .fp-sep{color:var(--text2);font-size:.8rem}
+.filter-panel .m-checks{display:flex;flex-wrap:wrap;gap:.5rem .8rem}
+.filter-panel .m-check-label{display:flex;align-items:center;gap:.3rem;font-size:.82rem;cursor:pointer;user-select:none}
+.filter-panel .m-check-label input[type=checkbox]{width:16px;height:16px;accent-color:var(--coolblue);cursor:pointer}
+.fp-reset{font-size:.78rem;color:var(--coolblue);cursor:pointer;text-decoration:underline;margin-top:.2rem;display:inline-block}
 @media(max-width:1200px){table{display:block;overflow-x:auto}.feature-grid,.rec-cards{grid-template-columns:1fr}}
 @media(max-width:600px){body{font-size:14px}.tab-nav button{padding:.7rem 1rem;font-size:.82rem}h1{font-size:1.3rem}}
 </style></head><body>
@@ -262,6 +281,208 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
     </div>
   </details>
 
+  <!-- Self-Cleaning Technology Deep Dive (collapsible) -->
+  <details class="m-detail">
+    <summary data-en="About Self-Cleaning Technology (click to expand)" data-ja="セルフクリーニング機能について (クリックで展開)">セルフクリーニング機能について (クリックで展開)</summary>
+    <div class="detail-body">
+
+      <div class="m-section">
+        <h4 data-en="Condenser vs Heat Pump: Two Drying Methods" data-ja="コンデンサー式 vs ヒートポンプ式: 2つの乾燥方式">コンデンサー式 vs ヒートポンプ式: 2つの乾燥方式</h4>
+        <p data-en="Understanding self-cleaning features requires knowing how drying works in washer-dryer combos." data-ja="セルフクリーニング機能を理解するには、洗濯乾燥機の乾燥の仕組みを知る必要があります。">セルフクリーニング機能を理解するには、洗濯乾燥機の乾燥の仕組みを知る必要があります。</p>
+        <table style="width:100%;font-size:.82rem;margin:.8rem 0;border-collapse:collapse">
+          <thead><tr style="background:#f0f0f2">
+            <th style="padding:.4rem .6rem;text-align:left;text-transform:none;font-size:.8rem;color:var(--text)"></th>
+            <th style="padding:.4rem .6rem;text-align:left;text-transform:none;font-size:.8rem;color:var(--text)" data-en="Condenser Type" data-ja="コンデンサー式">コンデンサー式</th>
+            <th style="padding:.4rem .6rem;text-align:left;text-transform:none;font-size:.8rem;color:var(--text)" data-en="Heat Pump Type" data-ja="ヒートポンプ式">ヒートポンプ式</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:.3rem .6rem;font-weight:600" data-en="How it works" data-ja="原理">原理</td>
+              <td style="padding:.3rem .6rem" data-en="Heater heats air to 70-80&deg;C &rarr; moisture evaporates &rarr; cooled and condensed" data-ja="ヒーターで空気を70-80℃に加熱 → 水分を蒸発 → 冷却・凝縮">ヒーターで空気を70-80℃に加熱 → 水分を蒸発 → 冷却・凝縮</td>
+              <td style="padding:.3rem .6rem" data-en="Refrigerant cycle (like reverse AC) heats air to ~50&deg;C &rarr; recycles heat" data-ja="冷媒サイクル（エアコンの逆）で約50℃に加熱 → 熱を再利用">冷媒サイクル（エアコンの逆）で約50℃に加熱 → 熱を再利用</td></tr>
+            <tr style="background:#f9f9fb"><td style="padding:.3rem .6rem;font-weight:600" data-en="Temperature" data-ja="乾燥温度">乾燥温度</td>
+              <td style="padding:.3rem .6rem">70-80℃</td>
+              <td style="padding:.3rem .6rem">~50℃</td></tr>
+            <tr><td style="padding:.3rem .6rem;font-weight:600" data-en="Energy use" data-ja="電気代">電気代</td>
+              <td style="padding:.3rem .6rem" data-en="High" data-ja="高い">高い</td>
+              <td style="padding:.3rem .6rem" data-en="~50% less" data-ja="約50%削減">約50%削減</td></tr>
+            <tr style="background:#f9f9fb"><td style="padding:.3rem .6rem;font-weight:600" data-en="Fabric damage" data-ja="衣類ダメージ">衣類ダメージ</td>
+              <td style="padding:.3rem .6rem" data-en="Higher (shrinkage, wear)" data-ja="大きい（縮み・傷み）">大きい（縮み・傷み）</td>
+              <td style="padding:.3rem .6rem" data-en="Less (gentle)" data-ja="少ない（衣類に優しい）">少ない（衣類に優しい）</td></tr>
+            <tr><td style="padding:.3rem .6rem;font-weight:600" data-en="Drying speed" data-ja="乾燥速度">乾燥速度</td>
+              <td style="padding:.3rem .6rem" data-en="Fast" data-ja="速い">速い</td>
+              <td style="padding:.3rem .6rem" data-en="Slower (low temp)" data-ja="遅い（低温のため）">遅い（低温のため）</td></tr>
+            <tr style="background:#f9f9fb"><td style="padding:.3rem .6rem;font-weight:600" data-en="Machine size" data-ja="本体サイズ">本体サイズ</td>
+              <td style="padding:.3rem .6rem" data-en="Compact" data-ja="コンパクト">コンパクト</td>
+              <td style="padding:.3rem .6rem" data-en="Larger (extra components)" data-ja="大きい（追加部品）">大きい（追加部品）</td></tr>
+            <tr><td style="padding:.3rem .6rem;font-weight:600" data-en="Price" data-ja="価格">価格</td>
+              <td style="padding:.3rem .6rem" data-en="Lower" data-ja="安い">安い</td>
+              <td style="padding:.3rem .6rem" data-en="Higher" data-ja="高い">高い</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="m-section">
+        <h4 data-en="Why Are Heat Pump Washer-Dryer Combos So Rare?" data-ja="なぜヒートポンプ式の洗濯乾燥機は少ないのか？">なぜヒートポンプ式の洗濯乾燥機は少ないのか？</h4>
+        <p data-en="Heat pump dryers are mainstream as standalone machines, but almost non-existent in washer-dryer combos. The reasons are physical constraints:" data-ja="単体の乾燥機ではヒートポンプが主流ですが、洗濯乾燥コンビ機にはほぼ存在しません。理由は物理的制約です:">単体の乾燥機ではヒートポンプが主流ですが、洗濯乾燥コンビ機にはほぼ存在しません。理由は物理的制約です:</p>
+        <ul>
+          <li><strong data-en="Space" data-ja="スペース">スペース</strong> &mdash; <span data-en="A heat pump needs a compressor, evaporator, and condenser. Fitting these alongside the wash drum, motor, and plumbing in one machine is extremely tight." data-ja="ヒートポンプにはコンプレッサー・蒸発器・凝縮器が必要。洗濯用ドラム・モーター・給排水系と1台に収めるのはスペース的に極めて困難。">ヒートポンプにはコンプレッサー・蒸発器・凝縮器が必要。洗濯用ドラム・モーター・給排水系と1台に収めるのはスペース的に極めて困難。</span></li>
+          <li><strong data-en="Water cooling compatibility" data-ja="水冷との相性">水冷との相性</strong> &mdash; <span data-en="Condenser combos can use tap water for cooling (simple). Heat pumps need a closed refrigerant circuit, which is harder to integrate with water plumbing." data-ja="コンデンサー式は水道水をそのまま冷却に使える（シンプル）。ヒートポンプは閉じた冷媒回路が必要で、水回りとの共存が設計的に難しい。">コンデンサー式は水道水をそのまま冷却に使える（シンプル）。ヒートポンプは閉じた冷媒回路が必要で、水回りとの共存が設計的に難しい。</span></li>
+          <li><strong data-en="Cost positioning" data-ja="コスト">コスト</strong> &mdash; <span data-en="Washer-dryer combos are positioned as space-saving compromises (&euro;500-1,500). Adding a heat pump raises costs so much that buyers would rather get separate machines with better performance." data-ja="洗濯乾燥コンビ機は省スペースの妥協品（€500-1,500）。ヒートポンプを載せると原価が大幅に上がり、「なら別々に買う方がいい」となる。">洗濯乾燥コンビ機は省スペースの妥協品（€500-1,500）。ヒートポンプを載せると原価が大幅に上がり、「なら別々に買う方がいい」となる。</span></li>
+        </ul>
+        <p data-en="The only exception in this comparison is the Miele WTI 370 WPM (&euro;2,149) &mdash; Miele is the only manufacturer that solved these engineering challenges for the EU combo market, but at a premium price and with a smaller 8/5 kg capacity." data-ja="この比較表での唯一の例外がMiele WTI 370 WPM（€2,149）。Mieleだけがこの技術的課題をクリアしてEU向けコンビ機にヒートポンプを搭載していますが、高価格で容量も8/5kgと小さめです。">この比較表での唯一の例外がMiele WTI 370 WPM（€2,149）。Mieleだけがこの技術的課題をクリアしてEU向けコンビ機にヒートポンプを搭載していますが、高価格で容量も8/5kgと小さめです。</p>
+        <p style="font-size:.8rem;color:var(--text2);margin-top:.5rem" data-en="Note: In the Netherlands, apartments are often small, making combo machines popular. But since combos rarely have heat pumps, the NL market is dominated by condenser-type combos." data-ja="補足: オランダは住居が狭くコンビ機の需要が高いですが、コンビ機にはヒートポンプがほぼ載らないため、NL市場はコンデンサー式が大半を占めています。スペースに余裕があれば、別々に購入する方が性能は上です。">補足: オランダは住居が狭くコンビ機の需要が高いですが、コンビ機にはヒートポンプがほぼ載らないため、NL市場はコンデンサー式が大半を占めています。スペースに余裕があれば、別々に購入する方が性能は上です。</p>
+      </div>
+
+      <div class="m-section">
+        <h4 data-en="Bosch selfCleaning Condenser &mdash; How It Works" data-ja="Bosch セルフクリーニングコンデンサー — 仕組み">Bosch セルフクリーニングコンデンサー — 仕組み</h4>
+        <p data-en="Bosch's (and Siemens') self-cleaning condenser uses water collected during drying (condensed moisture from clothes) to automatically rinse lint off the heat exchanger every cycle:" data-ja="Bosch（およびSiemens）のセルフクリーニングコンデンサーは、乾燥中に衣類から出た凝縮水を使い、毎サイクルコンデンサーのリントを自動洗浄します:">Bosch（およびSiemens）のセルフクリーニングコンデンサーは、乾燥中に衣類から出た凝縮水を使い、毎サイクルコンデンサーのリントを自動洗浄します:</p>
+        <ol style="font-size:.85rem;color:var(--text2);line-height:1.65;margin:.4rem 0 .4rem 1.2rem">
+          <li data-en="During drying, warm air absorbs moisture from clothes" data-ja="乾燥中、温風が衣類の水分を吸い取る">乾燥中、温風が衣類の水分を吸い取る</li>
+          <li data-en="Humid air passes through the condenser, moisture is condensed into water" data-ja="湿った空気がコンデンサーを通過、水分が凝縮される">湿った空気がコンデンサーを通過、水分が凝縮される</li>
+          <li data-en="This collected water is sprayed at high pressure over the condenser surface multiple times per cycle" data-ja="この凝縮水をコンデンサー表面に高圧で複数回スプレー">この凝縮水をコンデンサー表面に高圧で複数回スプレー</li>
+          <li data-en="Lint and dust are washed away automatically" data-ja="リント（糸くず）やホコリが自動的に洗い流される">リント（糸くず）やホコリが自動的に洗い流される</li>
+        </ol>
+        <p data-en="Without this feature, you must manually clean the condenser every few weeks. If neglected, drying time increases, energy consumption rises, and the machine may eventually fail." data-ja="この機能がない場合、数週間ごとにコンデンサーを手動清掃する必要があります。怠ると乾燥時間が延び、電気代が上がり、最悪の場合故障の原因になります。">この機能がない場合、数週間ごとにコンデンサーを手動清掃する必要があります。怠ると乾燥時間が延び、電気代が上がり、最悪の場合故障の原因になります。</p>
+        <div class="ref-links">
+          <a href="https://www.coolblue.nl/advies/wat-is-een-bosch-wasdroger-met-een-selfcleaning-condenser.html" target="_blank">Coolblue: Bosch selfCleaning Condenser</a>
+          <a href="https://www.coolblue.nl/advies/wat-is-een-zelfreinigende-condensor-en-wat-heb-je-eraan.html" target="_blank">Coolblue: Zelfreinigende condensor</a>
+        </div>
+      </div>
+
+      <div class="m-section">
+        <h4 data-en="Which Brands Have Self-Cleaning Condensers in the NL Market?" data-ja="NL市場でセルフクリーニングコンデンサーを搭載しているメーカーは？">NL市場でセルフクリーニングコンデンサーを搭載しているメーカーは？</h4>
+        <table style="width:100%;font-size:.82rem;margin:.8rem 0;border-collapse:collapse">
+          <thead><tr style="background:#f0f0f2">
+            <th style="padding:.4rem .6rem;text-align:left;text-transform:none;font-size:.8rem;color:var(--text)" data-en="Brand" data-ja="メーカー">メーカー</th>
+            <th style="padding:.4rem .6rem;text-align:left;text-transform:none;font-size:.8rem;color:var(--text)" data-en="Self-Cleaning Condenser (M2)" data-ja="セルフクリーニング (M2)">セルフクリーニング (M2)</th>
+            <th style="padding:.4rem .6rem;text-align:left;text-transform:none;font-size:.8rem;color:var(--text)" data-en="Notes" data-ja="備考">備考</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:.3rem .6rem;font-weight:600">Bosch</td>
+              <td style="padding:.3rem .6rem;color:#059669;font-weight:700" data-en="Serie 6+ only" data-ja="Serie 6以上のみ">Serie 6以上のみ</td>
+              <td style="padding:.3rem .6rem" data-en="Serie 4 (WNA13400NL) does NOT have it" data-ja="Serie 4 (WNA13400NL) には非搭載">Serie 4 (WNA13400NL) には非搭載</td></tr>
+            <tr style="background:#f9f9fb"><td style="padding:.3rem .6rem;font-weight:600">Siemens</td>
+              <td style="padding:.3rem .6rem;color:#059669;font-weight:700" data-en="iQ500+ only" data-ja="iQ500以上のみ">iQ500以上のみ</td>
+              <td style="padding:.3rem .6rem" data-en="iQ300 (WN34A100NL) does NOT have it" data-ja="iQ300 (WN34A100NL) には非搭載">iQ300 (WN34A100NL) には非搭載</td></tr>
+            <tr><td style="padding:.3rem .6rem;font-weight:600">Miele</td>
+              <td style="padding:.3rem .6rem" data-en="N/A (heat pump approach)" data-ja="N/A（ヒートポンプ方式）">N/A（ヒートポンプ方式）</td>
+              <td style="padding:.3rem .6rem" data-en="WTI 370 uses heat pump, structurally less lint buildup" data-ja="WTI 370はヒートポンプ式で構造的にリント蓄積が少ない">WTI 370はヒートポンプ式で構造的にリント蓄積が少ない</td></tr>
+            <tr style="background:#f9f9fb"><td style="padding:.3rem .6rem;font-weight:600">Samsung</td>
+              <td style="padding:.3rem .6rem;color:#dc2626;font-weight:700" data-en="NOT available (NL models)" data-ja="非搭載（NLモデル）">非搭載（NLモデル）</td>
+              <td style="padding:.3rem .6rem" data-en="Samsung has 'Auto Condenser Cleaning' but only on US/KR Bespoke AI 9000 (heat pump). NL 6000/8000 series: manual cleaning needed." data-ja="Samsung は「Auto Condenser Cleaning」技術を持つが、US/KR向けBespoke AI 9000（ヒートポンプ搭載）のみ。NLの6000/8000シリーズでは手動清掃が必要。">Samsung は「Auto Condenser Cleaning」技術を持つが、US/KR向けBespoke AI 9000（ヒートポンプ搭載）のみ。NLの6000/8000シリーズでは手動清掃が必要。</td></tr>
+            <tr><td style="padding:.3rem .6rem;font-weight:600">LG</td>
+              <td style="padding:.3rem .6rem;color:#dc2626;font-weight:700" data-en="NOT available" data-ja="非搭載">非搭載</td>
+              <td style="padding:.3rem .6rem" data-en="Manual condenser cleaning required" data-ja="コンデンサーの手動清掃が必要">コンデンサーの手動清掃が必要</td></tr>
+            <tr style="background:#f9f9fb"><td style="padding:.3rem .6rem;font-weight:600">AEG</td>
+              <td style="padding:.3rem .6rem;color:#dc2626;font-weight:700" data-en="NOT available" data-ja="非搭載">非搭載</td>
+              <td style="padding:.3rem .6rem" data-en="Manual condenser cleaning required" data-ja="コンデンサーの手動清掃が必要">コンデンサーの手動清掃が必要</td></tr>
+            <tr><td style="padding:.3rem .6rem;font-weight:600" data-en="Others" data-ja="その他">その他</td>
+              <td style="padding:.3rem .6rem;color:#dc2626;font-weight:700" data-en="NOT available" data-ja="非搭載">非搭載</td>
+              <td style="padding:.3rem .6rem" data-en="Whirlpool, Beko, Hisense, Haier, Heinner: manual cleaning" data-ja="Whirlpool, Beko, Hisense, Haier, Heinner: 手動清掃">Whirlpool, Beko, Hisense, Haier, Heinner: 手動清掃</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="m-section">
+        <h4 data-en="Other 'Self-Cleaning' Features (Not M2)" data-ja="その他の「セルフクリーニング」機能 (M2とは別物)">その他の「セルフクリーニング」機能 (M2とは別物)</h4>
+        <p data-en="Some brands advertise 'self-cleaning' features that are different from condenser cleaning:" data-ja="一部メーカーが宣伝する「セルフクリーニング」機能はコンデンサー清掃とは別物です:">一部メーカーが宣伝する「セルフクリーニング」機能はコンデンサー清掃とは別物です:</p>
+        <ul>
+          <li><strong>Samsung Drum Clean+ / Self Clean</strong> &mdash; <span data-en="Cleans the inside of the drum (bacteria/mould), NOT the condenser. This is M6 (Drum Self-Clean)." data-ja="ドラム内部（雑菌・カビ）の洗浄であり、コンデンサーの洗浄ではない。これはM6（ドラム自動洗浄）。">ドラム内部（雑菌・カビ）の洗浄であり、コンデンサーの洗浄ではない。これはM6（ドラム自動洗浄）。</span></li>
+          <li><strong>Samsung StayClean Drawer</strong> &mdash; <span data-en="Self-rinsing detergent tray. Useful but NOT condenser-related." data-ja="洗剤トレイの自動洗浄。便利だがコンデンサーとは無関係。">洗剤トレイの自動洗浄。便利だがコンデンサーとは無関係。</span></li>
+          <li><strong>LG Tub Clean</strong> &mdash; <span data-en="High-temp drum cleaning program. Same as Samsung's Drum Clean+ = M6." data-ja="高温ドラム洗浄プログラム。SamsungのDrum Clean+と同じ = M6。">高温ドラム洗浄プログラム。SamsungのDrum Clean+と同じ = M6。</span></li>
+        </ul>
+        <p style="font-size:.82rem;color:var(--text2);margin-top:.5rem;padding:.5rem .8rem;background:#fff3cd;border-radius:6px" data-en="Important: Do not confuse Drum Self-Clean (M6, cleans the inside of the drum) with Self-Cleaning Condenser (M2, cleans the heat exchanger). M2 is much rarer and more impactful for long-term maintenance." data-ja="重要: ドラム自動洗浄（M6、ドラム内部を洗浄）とセルフクリーニングコンデンサー（M2、熱交換器を洗浄）を混同しないでください。M2ははるかに希少で、長期的なメンテナンスへの影響が大きいです。">重要: ドラム自動洗浄（M6、ドラム内部を洗浄）とセルフクリーニングコンデンサー（M2、熱交換器を洗浄）を混同しないでください。M2ははるかに希少で、長期的なメンテナンスへの影響が大きいです。</p>
+      </div>
+
+      <div class="m-section">
+        <h4 data-en="Hard Water in the Netherlands &amp; Its Impact on Maintenance" data-ja="オランダの硬水とメンテナンスへの影響">オランダの硬水とメンテナンスへの影響</h4>
+        <p data-en="Dutch tap water is relatively hard in many regions (especially Noord-Holland, Zuid-Holland, Utrecht: 15-25&deg;dH). This has a significant impact on washer-dryer maintenance:" data-ja="オランダの水道水は多くの地域でかなり硬い（特にNH州・ZH州・Utrecht州: 15-25&deg;dH）。これは洗濯乾燥機のメンテナンスに大きく影響します:">オランダの水道水は多くの地域でかなり硬い（特にNH州・ZH州・Utrecht州: 15-25&deg;dH）。これは洗濯乾燥機のメンテナンスに大きく影響します:</p>
+        <ul>
+          <li><strong data-en="Limescale on the condenser" data-ja="コンデンサーへの石灰付着">コンデンサーへの石灰付着</strong> &mdash; <span data-en="Not just lint, but calcium deposits (kalk) also build up on the heat exchanger. This is harder to remove than lint &mdash; water rinse alone can't fully dissolve limescale. Over time, this reduces heat transfer efficiency." data-ja="リントだけでなく、石灰（kalk）も熱交換器に蓄積します。石灰はリントより除去が難しく、水洗いだけでは完全に溶かせません。蓄積すると熱伝達効率が低下します。">リントだけでなく、石灰（kalk）も熱交換器に蓄積します。石灰はリントより除去が難しく、水洗いだけでは完全に溶かせません。蓄積すると熱伝達効率が低下します。</span></li>
+          <li><strong data-en="Heater element damage" data-ja="ヒーター素子の損傷">ヒーター素子の損傷</strong> &mdash; <span data-en="Limescale coats the heating element, causing it to overheat to compensate. This shortens the machine's lifespan and increases energy consumption." data-ja="石灰がヒーター素子を覆うと、補償のために過熱が起こります。機械の寿命が縮み、電気代が増加します。">石灰がヒーター素子を覆うと、補償のために過熱が起こります。機械の寿命が縮み、電気代が増加します。</span></li>
+          <li><strong data-en="Self-cleaning condenser limitations" data-ja="セルフクリーニングの限界">セルフクリーニングの限界</strong> &mdash; <span data-en="Bosch's selfCleaning Condenser effectively rinses lint, but water alone cannot fully remove calcium buildup. Periodic descaling (with citric acid or dedicated products) is still recommended in hard water areas." data-ja="Boschのセルフクリーニングはリント除去には効果的ですが、水だけでは石灰を完全に除去できません。硬水地域では定期的なカルク除去（クエン酸や専用製品）が推奨されます。">Boschのセルフクリーニングはリント除去には効果的ですが、水だけでは石灰を完全に除去できません。硬水地域では定期的なカルク除去（クエン酸や専用製品）が推奨されます。</span></li>
+        </ul>
+
+        <p style="font-weight:600;margin-top:.8rem" data-en="Countermeasures available on washer-dryers:" data-ja="洗濯乾燥機で利用可能な対策:">洗濯乾燥機で利用可能な対策:</p>
+        <ul>
+          <li><strong>Bosch CalcProtection / AntiCalc</strong> &mdash; <span data-en="Built-in program that runs a descaling cycle. Available on Serie 6+. Helps prevent limescale buildup in the drum and heating element." data-ja="カルク除去サイクルを実行する内蔵プログラム。Serie 6以上に搭載。ドラムとヒーター素子の石灰蓄積を防止。">カルク除去サイクルを実行する内蔵プログラム。Serie 6以上に搭載。ドラムとヒーター素子の石灰蓄積を防止。</span></li>
+          <li><strong>Miele</strong> &mdash; <span data-en="Recommends using Miele descaling tablets (sold separately) every 3-6 months. The machine prompts you when maintenance is due." data-ja="Miele専用カルク除去タブレット（別売）を3-6ヶ月ごとに使用推奨。メンテナンス時期を機械が通知。">Miele専用カルク除去タブレット（別売）を3-6ヶ月ごとに使用推奨。メンテナンス時期を機械が通知。</span></li>
+          <li><strong data-en="External water filter" data-ja="外付け浄水フィルター">外付け浄水フィルター</strong> &mdash; <span data-en="A polyphosphate or magnetic filter on the inlet hose can reduce limescale formation. Not brand-specific; works with any machine. ~&euro;20-40." data-ja="給水ホースにポリリン酸フィルターやマグネットフィルターを取り付けると石灰の形成を減らせます。メーカー不問で使用可能。約€20-40。">給水ホースにポリリン酸フィルターやマグネットフィルターを取り付けると石灰の形成を減らせます。メーカー不問で使用可能。約€20-40。</span></li>
+        </ul>
+
+        <p style="font-weight:600;margin-top:1.2rem" data-en="Why are heat pump washer-dryer combos so rare in the Netherlands?" data-ja="なぜオランダではヒートポンプ式の洗濯乾燥機が少ないのか？">なぜオランダではヒートポンプ式の洗濯乾燥機が少ないのか？</p>
+        <p data-en="Interestingly, Japan &mdash; with even smaller apartments &mdash; has many heat pump washer-dryer combos (Panasonic, Hitachi, Sharp, Toshiba). So space alone doesn't explain the gap. The real reasons are a mix of market positioning, laundry culture, and hard water:" data-ja="興味深いことに、オランダより住居が狭い日本ではヒートポンプ式洗濯乾燥機が普及しています（パナソニック、日立、シャープ、東芝）。つまりスペースだけでは説明がつきません。本当の理由は市場の位置づけ・洗濯文化・硬水の複合です:">興味深いことに、オランダより住居が狭い日本ではヒートポンプ式洗濯乾燥機が普及しています（パナソニック、日立、シャープ、東芝）。つまりスペースだけでは説明がつきません。本当の理由は市場の位置づけ・洗濯文化・硬水の複合です:</p>
+
+        <p style="font-weight:600;margin-top:.6rem" data-en="1. EU market: combos are &lsquo;compromise products&rsquo;" data-ja="1. EU市場: コンビ機は「妥協品」">1. EU市場: コンビ機は「妥協品」</p>
+        <ul>
+          <li data-en="Dutch dryer ownership is ~60-75% (varies by source). Unlike Japan, not every load goes in the dryer &mdash; people mix air-drying (wasrek) and machine drying based on weather and fabric. Energy cost awareness drives a 'dry only when needed' approach." data-ja="オランダの乾燥機所有率は約60-75%（情報源により幅あり）。日本と違い「毎回乾燥機を使う」のではなく、天気や衣類に応じて室内干し（wasrek）と使い分けるのが一般的。エネルギーコスト意識が高く「必要な時だけ乾燥」という合理的な使い方をします。">オランダの乾燥機所有率は約60-75%（情報源により幅あり）。日本と違い「毎回乾燥機を使う」のではなく、天気や衣類に応じて室内干し（wasrek）と使い分けるのが一般的。エネルギーコスト意識が高く「必要な時だけ乾燥」という合理的な使い方をします。</li>
+          <li data-en="When Dutch people DO use a dryer, the ideal is a separate heat pump dryer (standalone, stacked or side-by-side). Combo machines are seen as a last resort for those with no space." data-ja="乾燥機を使う場合でも、理想は単体のヒートポンプ乾燥機（スタック配置や横並び）です。コンビ機は「スペースがない人の最終手段」という位置づけ。">乾燥機を使う場合でも、理想は単体のヒートポンプ乾燥機（スタック配置や横並び）です。コンビ機は「スペースがない人の最終手段」という位置づけ。</li>
+          <li data-en="Because combos are positioned as budget/compromise products (&euro;500-1,500), EU manufacturers (BSH, Electrolux) don't invest in heat pump development for combos." data-ja="コンビ機が廉価・妥協品（€500-1,500）として位置づけられているため、EUメーカー（BSH、Electrolux）はコンビ機へのヒートポンプ開発投資をしません。">コンビ機が廉価・妥協品（€500-1,500）として位置づけられているため、EUメーカー（BSH、Electrolux）はコンビ機へのヒートポンプ開発投資をしません。</li>
+        </ul>
+
+        <p style="font-weight:600;margin-top:.6rem" data-en="2. Japan: combos are the &lsquo;main product&rsquo;" data-ja="2. 日本: コンビ機が「メイン製品」">2. 日本: コンビ機が「メイン製品」</p>
+        <ul>
+          <li data-en="In Japan, the drum-type washer-dryer (ドラム式) is the aspirational product &mdash; the 'main' laundry machine for families. Press one button, come back to dry clothes. This is the expected workflow." data-ja="日本ではドラム式洗濯乾燥機が家族向けの「本命」製品。ボタンひとつで洗濯から乾燥まで完了 — これが当然のワークフローです。">日本ではドラム式洗濯乾燥機が家族向けの「本命」製品。ボタンひとつで洗濯から乾燥まで完了 — これが当然のワークフローです。</li>
+          <li data-en="Japanese manufacturers (Panasonic, Hitachi, Sharp, Toshiba) compete on combo features. Upper models at &yen;150,000-300,000 (&euro;900-1,800) ALL have heat pump drying. This investment makes sense because combos are the primary product." data-ja="日本メーカー（パナソニック、日立、シャープ、東芝）はコンビ機の機能で競争。上位モデル（15-30万円/€900-1,800）にはほぼ全てヒートポンプが搭載。コンビ機がメイン製品だからこそ、この開発投資が成り立ちます。">日本メーカー（パナソニック、日立、シャープ、東芝）はコンビ機の機能で競争。上位モデル（15-30万円/€900-1,800）にはほぼ全てヒートポンプが搭載。コンビ機がメイン製品だからこそ、この開発投資が成り立ちます。</li>
+          <li data-en="Japanese humidity (especially in rainy season/tsuyu) makes outdoor drying unreliable, so machine drying is a necessity, not a luxury." data-ja="日本の湿度（特に梅雨）で外干しは不安定。機械乾燥は贅沢品ではなく生活必需品です。">日本の湿度（特に梅雨）で外干しは不安定。機械乾燥は贅沢品ではなく生活必需品です。</li>
+        </ul>
+
+        <p style="font-weight:600;margin-top:.6rem" data-en="3. Dutch lifestyle: 2-action laundry is fine" data-ja="3. オランダの生活スタイル: 2アクション洗濯でOK">3. オランダの生活スタイル: 2アクション洗濯でOK</p>
+        <ul>
+          <li data-en="The Netherlands has the best work-life balance in the OECD. Nearly half of workers are part-time (3-4 days/week). Wednesday afternoon off for kids is standard. People have time for housework." data-ja="オランダはOECD中ワークライフバランス1位。労働者の約半数がパートタイム（週3-4日勤務）。水曜午後は子どもと過ごすのが一般的。家事に使える時間的余裕があります。">オランダはOECD中ワークライフバランス1位。労働者の約半数がパートタイム（週3-4日勤務）。水曜午後は子どもと過ごすのが一般的。家事に使える時間的余裕があります。</li>
+          <li data-en="Dutch families average ~3 loads/week and spend ~2 hours/day on housework. Moving laundry from washer to dryer (or hanging it) is not seen as a burden &mdash; it's just part of the routine." data-ja="オランダの家庭は週平均約3回洗濯、1日約2時間を家事に充てます。洗濯物を洗濯機から乾燥機に移す（または干す）のは負担ではなく、日常の一部です。">オランダの家庭は週平均約3回洗濯、1日約2時間を家事に充てます。洗濯物を洗濯機から乾燥機に移す（または干す）のは負担ではなく、日常の一部です。</li>
+          <li data-en="Energy and sustainability consciousness: 'Why run a dryer when it's sunny?' is a common Dutch attitude. Selective drying (only when needed) aligns with the national culture of nuchterheid (pragmatism/frugality)." data-ja="省エネ・サステナビリティ意識: 「晴れてるのになぜ乾燥機を回す？」というのがオランダ人の一般的な感覚。必要な時だけ乾燥するのは、オランダの国民性 nuchterheid（合理主義・質素さ）に合致しています。">省エネ・サステナビリティ意識: 「晴れてるのになぜ乾燥機を回す？」というのがオランダ人の一般的な感覚。必要な時だけ乾燥するのは、オランダの国民性 nuchterheid（合理主義・質素さ）に合致しています。</li>
+          <li data-en="Contrast with Japan: Japanese dual-income families with long work hours NEED 1-button wash+dry to fit laundry into tight schedules. In NL, the lifestyle allows for a more relaxed 2-step process." data-ja="日本との対比: 日本の共働き家庭は長時間労働でボタン1つの洗濯+乾燥が必須。NLではライフスタイルに余裕があり、2ステップでも問題ありません。">日本との対比: 日本の共働き家庭は長時間労働でボタン1つの洗濯+乾燥が必須。NLではライフスタイルに余裕があり、2ステップでも問題ありません。</li>
+        </ul>
+
+        <p style="font-weight:600;margin-top:.6rem" data-en="4. Hard water makes it worse in NL" data-ja="4. 硬水が問題をさらに悪化させる">4. 硬水が問題をさらに悪化させる</p>
+        <ul>
+          <li data-en="Heat pump evaporators/condensers are more sensitive to limescale than simple heater elements. In NL's hard water (15-25&deg;dH), calcium deposits degrade heat pump efficiency faster, increasing repair costs for an already expensive component." data-ja="ヒートポンプの蒸発器・凝縮器は、単純なヒーター素子よりも石灰に敏感。NLの硬水（15-25°dH）では石灰でヒートポンプ効率が早く低下し、高価な部品の修理コストが増大します。">ヒートポンプの蒸発器・凝縮器は、単純なヒーター素子よりも石灰に敏感。NLの硬水（15-25°dH）では石灰でヒートポンプ効率が早く低下し、高価な部品の修理コストが増大します。</li>
+          <li data-en="Japan's water is generally soft (most areas &lt;10&deg;dH), so heat pumps last longer without limescale issues." data-ja="日本の水は一般的に軟水（ほとんどの地域で10°dH以下）。石灰の問題が少なく、ヒートポンプが長持ちします。">日本の水は一般的に軟水（ほとんどの地域で10°dH以下）。石灰の問題が少なく、ヒートポンプが長持ちします。</li>
+        </ul>
+
+        <p style="font-weight:600;margin-top:.6rem" data-en="5. Technical: condenser type fits combos better" data-ja="5. 技術面: コンデンサー式はコンビ機と相性がよい">5. 技術面: コンデンサー式はコンビ機と相性がよい</p>
+        <ul>
+          <li data-en="Combo machines can reuse tap water from the wash cycle to cool the condenser (water-cooled). Simple and space-efficient." data-ja="コンビ機は洗濯工程の水道水をコンデンサー冷却に再利用できます（水冷式）。シンプルで省スペース。">コンビ機は洗濯工程の水道水をコンデンサー冷却に再利用できます（水冷式）。シンプルで省スペース。</li>
+          <li data-en="Heat pumps need a closed refrigerant circuit (compressor + extra heat exchangers), harder to integrate with water plumbing in a single machine." data-ja="ヒートポンプは閉じた冷媒回路（コンプレッサー+追加熱交換器）が必要で、1台に水回りと共存させるのが設計的に困難。">ヒートポンプは閉じた冷媒回路（コンプレッサー+追加熱交換器）が必要で、1台に水回りと共存させるのが設計的に困難。</li>
+        </ul>
+
+        <table style="width:100%;font-size:.82rem;margin:.8rem 0;border-collapse:collapse">
+          <thead><tr style="background:#f0f0f2">
+            <th style="padding:.4rem .6rem;text-align:left;text-transform:none;font-size:.8rem;color:var(--text)"></th>
+            <th style="padding:.4rem .6rem;text-align:left;text-transform:none;font-size:.8rem;color:var(--text)" data-en="Japan" data-ja="日本">日本</th>
+            <th style="padding:.4rem .6rem;text-align:left;text-transform:none;font-size:.8rem;color:var(--text)" data-en="Netherlands (EU)" data-ja="オランダ (EU)">オランダ (EU)</th>
+          </tr></thead>
+          <tbody>
+            <tr><td style="padding:.3rem .6rem;font-weight:600" data-en="Combo machine status" data-ja="コンビ機の位置づけ">コンビ機の位置づけ</td>
+              <td style="padding:.3rem .6rem" data-en="Main product for families" data-ja="家族向けメイン製品">家族向けメイン製品</td>
+              <td style="padding:.3rem .6rem" data-en="Budget/space compromise" data-ja="予算・スペースの妥協品">予算・スペースの妥協品</td></tr>
+            <tr style="background:#f9f9fb"><td style="padding:.3rem .6rem;font-weight:600" data-en="Drying culture" data-ja="乾燥の文化">乾燥の文化</td>
+              <td style="padding:.3rem .6rem" data-en="Machine drying = standard (humidity/rainy season)" data-ja="機械乾燥が標準（湿度・梅雨）">機械乾燥が標準（湿度・梅雨）</td>
+              <td style="padding:.3rem .6rem" data-en="Air-dry + machine mix (60-75% own dryer, but selective use)" data-ja="室内干し+乾燥機の使い分け（60-75%が所有、必要時のみ使用）">室内干し+乾燥機の使い分け（60-75%が所有、必要時のみ使用）</td></tr>
+            <tr><td style="padding:.3rem .6rem;font-weight:600" data-en="Workflow expectation" data-ja="期待されるワークフロー">期待されるワークフロー</td>
+              <td style="padding:.3rem .6rem" data-en="1 button &rarr; wash+dry done" data-ja="ボタン1つ → 洗濯+乾燥完了">ボタン1つ → 洗濯+乾燥完了</td>
+              <td style="padding:.3rem .6rem" data-en="Wash &rarr; air-dry or separate dryer (time available)" data-ja="洗濯 → 干す or 別の乾燥機（時間的余裕あり）">洗濯 → 干す or 別の乾燥機（時間的余裕あり）</td></tr>
+            <tr style="background:#f9f9fb"><td style="padding:.3rem .6rem;font-weight:600" data-en="Heat pump in combos" data-ja="コンビ機のヒートポンプ搭載率">コンビ機のヒートポンプ搭載率</td>
+              <td style="padding:.3rem .6rem;color:#059669;font-weight:700" data-en="Common (upper models)" data-ja="普及（上位モデルはほぼ全て）">普及（上位モデルはほぼ全て）</td>
+              <td style="padding:.3rem .6rem;color:#dc2626;font-weight:700" data-en="Almost none (only Miele)" data-ja="ほぼゼロ（Mieleのみ）">ほぼゼロ（Mieleのみ）</td></tr>
+            <tr><td style="padding:.3rem .6rem;font-weight:600" data-en="Water hardness" data-ja="水の硬度">水の硬度</td>
+              <td style="padding:.3rem .6rem" data-en="Soft (&lt;10&deg;dH)" data-ja="軟水（&lt;10°dH）">軟水（&lt;10°dH）</td>
+              <td style="padding:.3rem .6rem" data-en="Hard (15-25&deg;dH)" data-ja="硬水（15-25°dH）">硬水（15-25°dH）</td></tr>
+            <tr style="background:#f9f9fb"><td style="padding:.3rem .6rem;font-weight:600" data-en="Price range" data-ja="コンビ機の価格帯">コンビ機の価格帯</td>
+              <td style="padding:.3rem .6rem">&yen;100k-300k (&euro;600-1,800)</td>
+              <td style="padding:.3rem .6rem">&euro;500-1,500</td></tr>
+          </tbody>
+        </table>
+
+        <p style="font-size:.82rem;color:var(--text2);margin-top:.5rem;padding:.5rem .8rem;background:#fef3c7;border-radius:6px" data-en="Bottom line for NL residents: If you want the Japanese-style '1 button wash+dry' experience in the Netherlands, your options are limited. The Miele WTI 370 WPM is the only heat pump combo, but at &euro;2,149 with small 8/5kg capacity. For a more practical choice, Bosch/Siemens with i-DOS and self-cleaning condenser give the closest thing to a maintenance-free combo experience available in NL." data-ja="NL居住者への結論: 日本式の「ボタン1つで洗濯+乾燥完了」をオランダで実現したい場合、選択肢は限られます。ヒートポンプ搭載コンビ機はMiele WTI 370 WPM（€2,149、8/5kg）のみ。より現実的な選択として、Bosch/Siemensのi-DOS+セルフクリーニングコンデンサー搭載機が、NLで入手可能な最もメンテナンスフリーに近いコンビ機体験を提供します。">NL居住者への結論: 日本式の「ボタン1つで洗濯+乾燥完了」をオランダで実現したい場合、選択肢は限られます。ヒートポンプ搭載コンビ機はMiele WTI 370 WPM（€2,149、8/5kg）のみ。より現実的な選択として、Bosch/Siemensのi-DOS+セルフクリーニングコンデンサー搭載機が、NLで入手可能な最もメンテナンスフリーに近いコンビ機体験を提供します。</p>
+
+        <p style="font-size:.82rem;color:var(--text2);margin-top:.5rem;padding:.5rem .8rem;background:#e0f2fe;border-radius:6px" data-en="Tip for NL residents: Check your water hardness at your local water company's website (e.g. Waternet for Amsterdam, Dunea for The Hague). If &gt;15&deg;dH, plan for descaling every 3 months and consider i-DOS or AutoDose machines &mdash; they also help prevent residue from over-dosing in hard water." data-ja="NL居住者向けヒント: お住まいの地域の水道会社サイトで水の硬度を確認しましょう（例: アムステルダムはWaternet、デン・ハーグはDunea）。15&deg;dH以上の場合、3ヶ月ごとのカルク除去を計画し、i-DOSやAutoDose搭載機の検討をおすすめします — 硬水での洗剤入れすぎによる残留物も防げます。">NL居住者向けヒント: お住まいの地域の水道会社サイトで水の硬度を確認しましょう（例: アムステルダムはWaternet、デン・ハーグはDunea）。15&deg;dH以上の場合、3ヶ月ごとのカルク除去を計画し、i-DOSやAutoDose搭載機の検討をおすすめします — 硬水での洗剤入れすぎによる残留物も防げます。</p>
+      </div>
+
+    </div>
+  </details>
+
   <p class="sort-info" data-en="Click headers to sort. Drag header edges to resize." data-ja="列ヘッダーでソート。列端ドラッグでリサイズ。">列ヘッダーでソート。列端ドラッグでリサイズ。</p>
   <div class="controls" id="mainControls">
     <button class="filter-btn active" data-filter="all" data-en="All" data-ja="全て">全て</button>
@@ -269,6 +490,105 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
     <button class="filter-btn" data-filter="mm" data-en="MediaMarkt only" data-ja="MediaMarktのみ">MediaMarktのみ</button>
   </div>
   <input type="text" class="search-box" data-en-placeholder="Search model / brand..." data-ja-placeholder="機種名・メーカーで検索..." placeholder="機種名・メーカーで検索..." id="mainSearch">
+
+  <!-- Advanced Filters (collapsible) -->
+  <div class="filter-wrap">
+    <div style="text-align:center">
+      <button class="filter-toggle" id="filterToggle" data-en="Filters" data-ja="フィルター">フィルター</button>
+    </div>
+    <div class="filter-panel" id="filterPanel">
+      <div class="fp-group">
+        <div class="fp-label" data-en="Price" data-ja="価格">価格</div>
+        <div class="fp-select-row">
+          <select id="priceMin">
+            <option value="0" data-en="No min" data-ja="下限なし">下限なし</option>
+            <option value="500">&euro;500+</option>
+            <option value="700">&euro;700+</option>
+            <option value="900">&euro;900+</option>
+            <option value="1000">&euro;1,000+</option>
+            <option value="1200">&euro;1,200+</option>
+            <option value="1500">&euro;1,500+</option>
+          </select>
+          <span class="fp-sep">&ndash;</span>
+          <select id="priceMax">
+            <option value="99999" data-en="No max" data-ja="上限なし">上限なし</option>
+            <option value="600">&euro;600</option>
+            <option value="800">&euro;800</option>
+            <option value="1000">&euro;1,000</option>
+            <option value="1200">&euro;1,200</option>
+            <option value="1500">&euro;1,500</option>
+            <option value="2000">&euro;2,000</option>
+            <option value="3000">&euro;3,000</option>
+          </select>
+        </div>
+      </div>
+      <div class="fp-group">
+        <div class="fp-label" data-en="Wash capacity" data-ja="洗濯容量">洗濯容量</div>
+        <div class="fp-select-row">
+          <select id="washMin">
+            <option value="0" data-en="No min" data-ja="下限なし">下限なし</option>
+            <option value="7">7 kg+</option>
+            <option value="8">8 kg+</option>
+            <option value="9">9 kg+</option>
+            <option value="10">10 kg+</option>
+            <option value="11">11 kg+</option>
+            <option value="13">13 kg+</option>
+          </select>
+          <span class="fp-sep">&ndash;</span>
+          <select id="washMax">
+            <option value="99" data-en="No max" data-ja="上限なし">上限なし</option>
+            <option value="8">8 kg</option>
+            <option value="9">9 kg</option>
+            <option value="10">10 kg</option>
+            <option value="11">11 kg</option>
+          </select>
+        </div>
+      </div>
+      <div class="fp-group">
+        <div class="fp-label" data-en="Dry capacity" data-ja="乾燥容量">乾燥容量</div>
+        <div class="fp-select-row">
+          <select id="dryMin">
+            <option value="0" data-en="No min" data-ja="下限なし">下限なし</option>
+            <option value="5">5 kg+</option>
+            <option value="6">6 kg+</option>
+            <option value="7">7 kg+</option>
+            <option value="8">8 kg+</option>
+          </select>
+          <span class="fp-sep">&ndash;</span>
+          <select id="dryMax">
+            <option value="99" data-en="No max" data-ja="上限なし">上限なし</option>
+            <option value="5">5 kg</option>
+            <option value="6">6 kg</option>
+            <option value="7">7 kg</option>
+          </select>
+        </div>
+      </div>
+      <div class="fp-group">
+        <div class="fp-label" data-en="Required features" data-ja="必須機能">必須機能</div>
+        <div class="m-checks" id="mChecks">
+          <label class="m-check-label"><input type="checkbox" value="m1"> M1 <span data-en="Auto-Dose" data-ja="自動洗剤">自動洗剤</span></label>
+          <label class="m-check-label"><input type="checkbox" value="m2"> M2 <span data-en="Self-Clean Cond." data-ja="セルフクリーニング">セルフクリーニング</span></label>
+          <label class="m-check-label"><input type="checkbox" value="m3"> M3 <span data-en="Heat Pump" data-ja="ヒートポンプ">ヒートポンプ</span></label>
+          <label class="m-check-label"><input type="checkbox" value="m4"> M4 AquaStop</label>
+          <label class="m-check-label"><input type="checkbox" value="m5"> M5 <span data-en="Inverter Motor" data-ja="インバーターモーター">インバーターモーター</span></label>
+          <label class="m-check-label"><input type="checkbox" value="m6"> M6 <span data-en="Drum Clean" data-ja="ドラム自動洗浄">ドラム自動洗浄</span></label>
+        </div>
+      </div>
+      <div class="fp-group" style="border-bottom:none">
+        <div class="fp-label" data-en="Presets" data-ja="プリセット">プリセット</div>
+        <div class="fp-select-row" style="flex-wrap:wrap;gap:.4rem">
+          <button class="auto-fit-btn preset-btn" data-preset="family-best" style="font-size:.78rem;padding:.3rem .7rem" data-en="Family Best (10+kg, M1+M2)" data-ja="子育てベスト">子育てベスト</button>
+          <button class="auto-fit-btn preset-btn" data-preset="budget" style="font-size:.78rem;padding:.3rem .7rem" data-en="Budget (&le;&euro;800)" data-ja="低価格(&le;&euro;800)">低価格(&le;&euro;800)</button>
+          <button class="auto-fit-btn preset-btn" data-preset="maint-free" style="font-size:.78rem;padding:.3rem .7rem" data-en="Maint-Free (M1+M2+M4)" data-ja="メンテフリー重視">メンテフリー重視</button>
+          <button class="auto-fit-btn preset-btn" data-preset="large" style="font-size:.78rem;padding:.3rem .7rem" data-en="Large (11+kg)" data-ja="大容量(11kg+)">大容量(11kg+)</button>
+        </div>
+      </div>
+      <div style="display:flex;gap:.8rem;justify-content:center;padding-top:.6rem">
+        <button class="auto-fit-btn" id="applyFilterBtn" style="background:var(--coolblue);color:#fff;border-color:var(--coolblue);font-size:.9rem;padding:.5rem 2rem" data-en="Apply" data-ja="フィルター適用">フィルター適用</button>
+        <button class="auto-fit-btn" id="filterReset" style="font-size:.82rem;padding:.5rem 1.2rem" data-en="Reset" data-ja="リセット">リセット</button>
+      </div>
+    </div>
+  </div>
   <div style="text-align:center;margin-bottom:.8rem"><button class="auto-fit-btn" id="autoFitBtn" data-en="Auto-fit columns" data-ja="列幅自動調整">列幅自動調整</button></div>
   <div style="overflow-x:auto"><table id="mainTable"><thead><tr>
     <th data-col="id">ID</th>
@@ -292,7 +612,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
     <th data-col="summary" data-en="Notes" data-ja="備考">備考</th>
   </tr></thead>
   <tbody id="mainBody">
-    <tr data-price="997" data-mf="77" data-ps="72" data-cb="1" data-mm="1">
+    <tr data-price="997" data-mf="77" data-ps="72" data-wash="10.5" data-dry="6" data-cb="1" data-mm="1" data-m1="1" data-m2="1" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">01</td>
       <td><span class="brand-badge brand-bosch">Bosch</span></td>
       <td>Bosch WNG254A7NL i-DOS - 10,5/6 kg
@@ -315,7 +635,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;25&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Maint+&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;25&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;メンテ◎&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">25</span>/33pt<br>メンテ: <span style="color:#059669;font-weight:700">28</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">メンテ◎</span></div></span></td>
       <td class="summary-cell"><span data-en="i-DOS + self-clean condenser + AquaStop. Great value." data-ja="i-DOS + セルフクリーニング + AquaStop。コスパ良好。">i-DOS + セルフクリーニング + AquaStop。コスパ良好。</span></td>
     </tr>
-    <tr data-price="1099" data-mf="77" data-ps="70" data-cb="1" data-mm="1">
+    <tr data-price="1099" data-mf="77" data-ps="70" data-wash="10.5" data-dry="6" data-cb="1" data-mm="1" data-m1="1" data-m2="1" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">02</td>
       <td><span class="brand-badge brand-bosch">Bosch</span></td>
       <td>Bosch WNC254A0NL i-DOS - 10,5/6 kg
@@ -338,7 +658,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;24&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Maint+&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;24&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;メンテ◎&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">24</span>/33pt<br>メンテ: <span style="color:#059669;font-weight:700">28</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">メンテ◎</span></div></span></td>
       <td class="summary-cell"><span data-en="i-DOS + self-clean condenser + AquaStop. Best balance." data-ja="i-DOS + セルフクリーニング + AquaStop。ベストバランス。">i-DOS + セルフクリーニング + AquaStop。ベストバランス。</span></td>
     </tr>
-    <tr data-price="1119" data-mf="77" data-ps="70" data-cb="1" data-mm="0">
+    <tr data-price="1119" data-mf="77" data-ps="70" data-wash="10.5" data-dry="6" data-cb="1" data-mm="0" data-m1="1" data-m2="1" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">03</td>
       <td><span class="brand-badge brand-bosch">Bosch</span></td>
       <td>Bosch WNG254A9BY i-DOS - 10,5/6 kg
@@ -360,7 +680,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Maint+&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;メンテ◎&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">23</span>/33pt<br>メンテ: <span style="color:#059669;font-weight:700">28</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">メンテ◎</span></div></span></td>
       <td class="summary-cell"><span data-en="i-DOS + self-clean condenser + AquaStop." data-ja="i-DOS + セルフクリーニング + AquaStop。">i-DOS + セルフクリーニング + AquaStop。</span></td>
     </tr>
-    <tr data-price="879" data-mf="57" data-ps="63" data-cb="1" data-mm="0">
+    <tr data-price="879" data-mf="57" data-ps="63" data-wash="8" data-dry="5" data-cb="1" data-mm="0" data-m1="1" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">04</td>
       <td><span class="brand-badge brand-aeg">AEG</span></td>
       <td>AEG LWR7586CUB DualSense UniversalDose - 8/5 kg
@@ -383,7 +703,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;27&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Maint OK&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;27&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;メンテ○&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">27</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">21</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">メンテ○</span></div></span></td>
       <td class="summary-cell"><span data-en="UniversalDose + DualSense." data-ja="UniversalDose + DualSense温度制御。">UniversalDose + DualSense温度制御。</span></td>
     </tr>
-    <tr data-price="1129" data-mf="59" data-ps="63" data-cb="1" data-mm="0">
+    <tr data-price="1129" data-mf="59" data-ps="63" data-wash="10.5" data-dry="6" data-cb="1" data-mm="0" data-m1="0" data-m2="1" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">05</td>
       <td><span class="brand-badge brand-siemens">Siemens</span></td>
       <td>Siemens WN54G2A0EU - 10,5/6 kg
@@ -405,7 +725,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Maint OK&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;メンテ○&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">23</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">21</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">メンテ○</span></div></span></td>
       <td class="summary-cell"><span data-en="Self-clean condenser + AquaStop." data-ja="セルフクリーニング + AquaStop。">セルフクリーニング + AquaStop。</span></td>
     </tr>
-    <tr data-price="1149" data-mf="59" data-ps="63" data-cb="1" data-mm="1">
+    <tr data-price="1149" data-mf="59" data-ps="63" data-wash="10.5" data-dry="6" data-cb="1" data-mm="1" data-m1="0" data-m2="1" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">06</td>
       <td><span class="brand-badge brand-siemens">Siemens</span></td>
       <td>Siemens WN54C2A0NL - 10,5/6 kg
@@ -428,7 +748,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Maint OK&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;メンテ○&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">23</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">21</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">メンテ○</span></div></span></td>
       <td class="summary-cell"><span data-en="Self-clean condenser + AquaStop." data-ja="セルフクリーニング + AquaStop。">セルフクリーニング + AquaStop。</span></td>
     </tr>
-    <tr data-price="1159" data-mf="59" data-ps="62" data-cb="1" data-mm="0">
+    <tr data-price="1159" data-mf="59" data-ps="62" data-wash="10.5" data-dry="6" data-cb="1" data-mm="0" data-m1="0" data-m2="1" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">07</td>
       <td><span class="brand-badge brand-siemens">Siemens</span></td>
       <td>Siemens WN54G205NL - 10,5/6 kg
@@ -451,7 +771,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Maint OK&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;メンテ○&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">23</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">21</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">メンテ○</span></div></span></td>
       <td class="summary-cell"><span data-en="Self-clean condenser + AquaStop." data-ja="セルフクリーニング + AquaStop。">セルフクリーニング + AquaStop。</span></td>
     </tr>
-    <tr data-price="1149" data-mf="59" data-ps="61" data-cb="1" data-mm="0">
+    <tr data-price="1149" data-mf="59" data-ps="61" data-wash="9" data-dry="6" data-cb="1" data-mm="0" data-m1="0" data-m2="1" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">08</td>
       <td><span class="brand-badge brand-bosch">Bosch</span></td>
       <td>Bosch WNG24401BY - 9/6 kg
@@ -473,7 +793,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Maint OK&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;メンテ○&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">17</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">23</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">21</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">メンテ○</span></div></span></td>
       <td class="summary-cell"><span data-en="Self-clean condenser + AquaStop. No auto-dose." data-ja="セルフクリーニング + AquaStop。自動洗剤なし。">セルフクリーニング + AquaStop。自動洗剤なし。</span></td>
     </tr>
-    <tr data-price="1249" data-mf="59" data-ps="61" data-cb="0" data-mm="1">
+    <tr data-price="1249" data-mf="59" data-ps="61" data-wash="10.5" data-dry="6" data-cb="0" data-mm="1" data-m1="0" data-m2="1" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">09</td>
       <td><span class="brand-badge brand-siemens">Siemens</span></td>
       <td>Siemens WN54G2A7NL - 10,5/6 kg
@@ -496,7 +816,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Maint OK&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;メンテ○&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">21</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">21</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">メンテ○</span></div></span></td>
       <td class="summary-cell"><span data-en="Self-clean condenser + AquaStop." data-ja="セルフクリーニング + AquaStop。">セルフクリーニング + AquaStop。</span></td>
     </tr>
-    <tr data-price="1389" data-mf="59" data-ps="59" data-cb="1" data-mm="0">
+    <tr data-price="1389" data-mf="59" data-ps="59" data-wash="10.5" data-dry="6" data-cb="1" data-mm="0" data-m1="0" data-m2="1" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">10</td>
       <td><span class="brand-badge brand-siemens">Siemens</span></td>
       <td>Siemens WN54C2A0EU - 10,5/6 kg
@@ -519,7 +839,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Maint OK&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;メンテ○&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">21</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">メンテ○</span></div></span></td>
       <td class="summary-cell"><span data-en="Self-clean condenser + AquaStop." data-ja="セルフクリーニング + AquaStop。">セルフクリーニング + AquaStop。</span></td>
     </tr>
-    <tr data-price="749" data-mf="39" data-ps="58" data-cb="1" data-mm="0">
+    <tr data-price="749" data-mf="39" data-ps="58" data-wash="8" data-dry="5" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">11</td>
       <td><span class="brand-badge brand-aeg">AEG</span></td>
       <td>AEG LWR73R842 DualSense - 8/5 kg
@@ -541,7 +861,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;29&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;29&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">29</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">14</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="7000 DualSense. Fewer maint features." data-ja="7000シリーズDualSense。メンテフリー機能少なめ。">7000シリーズDualSense。メンテフリー機能少なめ。</span></td>
     </tr>
-    <tr data-price="888" data-mf="19" data-ps="58" data-cb="0" data-mm="1">
+    <tr data-price="888" data-mf="19" data-ps="58" data-wash="13" data-dry="7" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">12</td>
       <td><span class="brand-badge brand-lg">LG</span></td>
       <td>LG F4DR9537S2W - 13/7 kg
@@ -563,7 +883,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;27&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;27&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">23</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">27</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="Large 13/7kg. Direct Drive (10yr)." data-ja="大容量13/7kg。Direct Drive(10年保証)。">大容量13/7kg。Direct Drive(10年保証)。</span></td>
     </tr>
-    <tr data-price="1389" data-mf="57" data-ps="58" data-cb="1" data-mm="0">
+    <tr data-price="1389" data-mf="57" data-ps="58" data-wash="10" data-dry="6" data-cb="1" data-mm="0" data-m1="1" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">13</td>
       <td><span class="brand-badge brand-aeg">AEG</span></td>
       <td>AEG LWR8716AD6 PowerCare AutoDose - 10/6 kg
@@ -586,7 +906,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Maint OK&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;21&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;メンテ○&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">18</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">21</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">メンテ○</span></div></span></td>
       <td class="summary-cell"><span data-en="AutoDose + AquaStop. 8000 premium." data-ja="AutoDose + AquaStop。8000シリーズ高品質。">AutoDose + AquaStop。8000シリーズ高品質。</span></td>
     </tr>
-    <tr data-price="599" data-mf="19" data-ps="57" data-cb="0" data-mm="1">
+    <tr data-price="599" data-mf="19" data-ps="57" data-wash="9" data-dry="6" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">14</td>
       <td><span class="brand-badge brand-lg">LG</span></td>
       <td>LG F4DR3096N3W TurboWash - 9/6 kg
@@ -608,7 +928,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;31&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Budget&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;31&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;低価格&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">17</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">31</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">低価格</span></div></span></td>
       <td class="summary-cell"><span data-en="TurboWash. Direct Drive (10yr)." data-ja="TurboWash。Direct Drive(10年保証)。">TurboWash。Direct Drive(10年保証)。</span></td>
     </tr>
-    <tr data-price="2149" data-mf="100" data-ps="57" data-cb="1" data-mm="0">
+    <tr data-price="2149" data-mf="100" data-ps="57" data-wash="8" data-dry="5" data-cb="1" data-mm="0" data-m1="1" data-m2="1" data-m3="1" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">15</td>
       <td><span class="brand-badge brand-miele">Miele</span></td>
       <td>Miele WTI 370 WPM PowerWash 2.0 - 8/5kg
@@ -631,7 +951,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;8&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;34&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Maint+&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;8&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;34&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;メンテ◎&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#9ca3af;font-weight:700">8</span>/33pt<br>メンテ: <span style="color:#059669;font-weight:700">34</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">メンテ◎</span></div></span></td>
       <td class="summary-cell"><span data-en="Heat pump (unique!) + TwinDos + SilentDrive + AquaStop. 20yr design life." data-ja="ヒートポンプ(唯一!) + TwinDos + SilentDrive + AquaStop。設計寿命20年。">ヒートポンプ(唯一!) + TwinDos + SilentDrive + AquaStop。設計寿命20年。</span></td>
     </tr>
-    <tr data-price="679" data-mf="19" data-ps="56" data-cb="1" data-mm="0">
+    <tr data-price="679" data-mf="19" data-ps="56" data-wash="9" data-dry="6" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">16</td>
       <td><span class="brand-badge brand-lg">LG</span></td>
       <td>LG GD3R509S0 - 9/6 kg
@@ -654,7 +974,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;30&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Budget&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;30&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;低価格&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">17</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">30</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">低価格</span></div></span></td>
       <td class="summary-cell"><span data-en="Direct Drive (10yr). Tub Clean." data-ja="Direct Drive(10年保証)。ドラム洗浄。">Direct Drive(10年保証)。ドラム洗浄。</span></td>
     </tr>
-    <tr data-price="699" data-mf="19" data-ps="56" data-cb="1" data-mm="0">
+    <tr data-price="699" data-mf="19" data-ps="56" data-wash="9" data-dry="6" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">17</td>
       <td><span class="brand-badge brand-samsung">Samsung</span></td>
       <td>Samsung WD90DG5B15BH EcoBubble - 9/6 kg
@@ -677,7 +997,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;30&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Budget&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;30&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;低価格&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">17</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">30</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">低価格</span></div></span></td>
       <td class="summary-cell"><span data-en="5000 EcoBubble. Manual condenser clean." data-ja="5000シリーズEcoBubble。コンデンサー手動清掃。">5000シリーズEcoBubble。コンデンサー手動清掃。</span></td>
     </tr>
-    <tr data-price="849" data-mf="19" data-ps="56" data-cb="0" data-mm="1">
+    <tr data-price="849" data-mf="19" data-ps="56" data-wash="11" data-dry="6" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">18</td>
       <td><span class="brand-badge brand-samsung">Samsung</span></td>
       <td>Samsung WD11DG6B85BB AI Wash - 11/6 kg
@@ -700,7 +1020,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;27&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;27&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">27</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="6000 AI Wash 11kg." data-ja="6000シリーズAI Wash 11kg。">6000シリーズAI Wash 11kg。</span></td>
     </tr>
-    <tr data-price="874" data-mf="41" data-ps="56" data-cb="1" data-mm="1">
+    <tr data-price="874" data-mf="41" data-ps="56" data-wash="8" data-dry="5" data-cb="1" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">19</td>
       <td><span class="brand-badge brand-siemens">Siemens</span></td>
       <td>Siemens WN34A100NL - 8/5 kg
@@ -723,7 +1043,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;27&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;27&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">27</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">14</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="Entry. AquaStop only." data-ja="エントリー。AquaStopのみ。">エントリー。AquaStopのみ。</span></td>
     </tr>
-    <tr data-price="887" data-mf="41" data-ps="56" data-cb="1" data-mm="0">
+    <tr data-price="887" data-mf="41" data-ps="56" data-wash="8" data-dry="5" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">20</td>
       <td><span class="brand-badge brand-siemens">Siemens</span></td>
       <td>Siemens WN34A100EU - 8/5 kg
@@ -745,7 +1065,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;27&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;27&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">27</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">14</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="Entry. AquaStop only." data-ja="エントリー。AquaStopのみ。">エントリー。AquaStopのみ。</span></td>
     </tr>
-    <tr data-price="889" data-mf="41" data-ps="56" data-cb="1" data-mm="1">
+    <tr data-price="889" data-mf="41" data-ps="56" data-wash="8" data-dry="5" data-cb="1" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">21</td>
       <td><span class="brand-badge brand-bosch">Bosch</span></td>
       <td>Bosch WNA13400NL SpeedPerfect - 8/5 kg
@@ -768,7 +1088,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;27&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;27&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">27</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">14</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="Serie 4 entry. AquaStop only." data-ja="Serie 4エントリー。AquaStopのみ。">Serie 4エントリー。AquaStopのみ。</span></td>
     </tr>
-    <tr data-price="1059" data-mf="39" data-ps="56" data-cb="1" data-mm="0">
+    <tr data-price="1059" data-mf="39" data-ps="56" data-wash="10" data-dry="6" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">22</td>
       <td><span class="brand-badge brand-aeg">AEG</span></td>
       <td>AEG LWR76144 ProSteam
@@ -790,7 +1110,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;24&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;24&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">18</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">24</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">14</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="7000 ProSteam. No auto-dose." data-ja="7000シリーズProSteam。自動洗剤なし。">7000シリーズProSteam。自動洗剤なし。</span></td>
     </tr>
-    <tr data-price="689" data-mf="19" data-ps="55" data-cb="1" data-mm="0">
+    <tr data-price="689" data-mf="19" data-ps="55" data-wash="9" data-dry="5" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">23</td>
       <td><span class="brand-badge brand-lg">LG</span></td>
       <td>LG W4X1095NWB - 9/5 kg
@@ -812,7 +1132,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;16&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;30&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Budget&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;16&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;30&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;低価格&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">16</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">30</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">低価格</span></div></span></td>
       <td class="summary-cell"><span data-en="Energy A. Direct Drive (10yr). Steam." data-ja="エネルギーA。Direct Drive(10年保証)。スチーム。">エネルギーA。Direct Drive(10年保証)。スチーム。</span></td>
     </tr>
-    <tr data-price="899" data-mf="39" data-ps="55" data-cb="0" data-mm="1">
+    <tr data-price="899" data-mf="39" data-ps="55" data-wash="8" data-dry="5" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">24</td>
       <td><span class="brand-badge brand-aeg">AEG</span></td>
       <td>AEG LWR73864 ProSteam - 8/5 kg
@@ -834,7 +1154,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;26&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;26&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">26</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">14</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="7000 ProSteam. No auto-dose." data-ja="7000シリーズProSteam。自動洗剤なし。">7000シリーズProSteam。自動洗剤なし。</span></td>
     </tr>
-    <tr data-price="999" data-mf="39" data-ps="55" data-cb="1" data-mm="0">
+    <tr data-price="999" data-mf="39" data-ps="55" data-wash="9" data-dry="5" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">25</td>
       <td><span class="brand-badge brand-aeg">AEG</span></td>
       <td>AEG LWR85R966 PowerCare - 9/5 kg
@@ -856,7 +1176,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;16&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;25&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;16&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;25&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">16</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">25</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">14</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="8000 PowerCare. AquaStop." data-ja="8000シリーズPowerCare。AquaStop。">8000シリーズPowerCare。AquaStop。</span></td>
     </tr>
-    <tr data-price="629" data-mf="19" data-ps="54" data-cb="1" data-mm="1">
+    <tr data-price="629" data-mf="19" data-ps="54" data-wash="8" data-dry="5" data-cb="1" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">26</td>
       <td><span class="brand-badge brand-lg">LG</span></td>
       <td>LG W4X1085NWB - 8/5 kg
@@ -879,7 +1199,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;31&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Budget&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;31&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;低価格&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">31</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">低価格</span></div></span></td>
       <td class="summary-cell"><span data-en="Energy A. Direct Drive (10yr). Steam." data-ja="エネルギーA。Direct Drive(10年保証)。スチーム。">エネルギーA。Direct Drive(10年保証)。スチーム。</span></td>
     </tr>
-    <tr data-price="665" data-mf="19" data-ps="54" data-cb="1" data-mm="1">
+    <tr data-price="665" data-mf="19" data-ps="54" data-wash="8" data-dry="5" data-cb="1" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">27</td>
       <td><span class="brand-badge brand-samsung">Samsung</span></td>
       <td>Samsung WD80TA049BE EcoBubble - 8/5 kg
@@ -902,7 +1222,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;30&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Budget&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;30&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;低価格&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">30</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">低価格</span></div></span></td>
       <td class="summary-cell"><span data-en="5000 series. Manual condenser clean." data-ja="5000シリーズ。コンデンサー手動清掃。">5000シリーズ。コンデンサー手動清掃。</span></td>
     </tr>
-    <tr data-price="777" data-mf="19" data-ps="54" data-cb="0" data-mm="1">
+    <tr data-price="777" data-mf="19" data-ps="54" data-wash="9" data-dry="6" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">28</td>
       <td><span class="brand-badge brand-samsung">Samsung</span></td>
       <td>Samsung WD90DG6B85BKU3 AI Wash - 9/6 kg
@@ -925,7 +1245,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">17</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">28</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="6000 AI Wash. Manual condenser clean." data-ja="6000シリーズAI Wash。コンデンサー手動清掃。">6000シリーズAI Wash。コンデンサー手動清掃。</span></td>
     </tr>
-    <tr data-price="799" data-mf="19" data-ps="54" data-cb="1" data-mm="0">
+    <tr data-price="799" data-mf="19" data-ps="54" data-wash="9" data-dry="6" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">29</td>
       <td><span class="brand-badge brand-samsung">Samsung</span></td>
       <td>Samsung WD90DG6B85BB AI Wash - 9/6 kg
@@ -948,7 +1268,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">17</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">28</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="6000 AI Wash. Manual condenser clean." data-ja="6000シリーズAI Wash。コンデンサー手動清掃。">6000シリーズAI Wash。コンデンサー手動清掃。</span></td>
     </tr>
-    <tr data-price="975.08" data-mf="19" data-ps="54" data-cb="0" data-mm="1">
+    <tr data-price="975.08" data-mf="19" data-ps="54" data-wash="11" data-dry="6" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">30</td>
       <td><span class="brand-badge brand-samsung">Samsung</span></td>
       <td>Samsung WD11DG6B85BK - 11/6 kg
@@ -971,7 +1291,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;25&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;25&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">25</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="6000 AI Wash 11kg." data-ja="6000シリーズAI Wash 11kg。">6000シリーズAI Wash 11kg。</span></td>
     </tr>
-    <tr data-price="1129" data-mf="41" data-ps="54" data-cb="1" data-mm="0">
+    <tr data-price="1129" data-mf="41" data-ps="54" data-wash="9" data-dry="6" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">31</td>
       <td><span class="brand-badge brand-siemens">Siemens</span></td>
       <td>Siemens WN44A120NL - 9/6 kg
@@ -993,7 +1313,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">17</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">23</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">14</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="Mid-range. AquaStop only." data-ja="ミドルレンジ。AquaStopのみ。">ミドルレンジ。AquaStopのみ。</span></td>
     </tr>
-    <tr data-price="1349" data-mf="39" data-ps="52" data-cb="1" data-mm="0">
+    <tr data-price="1349" data-mf="39" data-ps="52" data-wash="10" data-dry="6" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">32</td>
       <td><span class="brand-badge brand-aeg">AEG</span></td>
       <td>AEG LWR9506BN4 AbsoluteCare - 10/6 kg
@@ -1015,7 +1335,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;20&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;20&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">18</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">20</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">14</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="9000 top-tier. AbsoluteCare + AquaStop." data-ja="9000シリーズ最上位。AbsoluteCare + AquaStop。">9000シリーズ最上位。AbsoluteCare + AquaStop。</span></td>
     </tr>
-    <tr data-price="1179" data-mf="19" data-ps="51" data-cb="1" data-mm="1">
+    <tr data-price="1179" data-mf="19" data-ps="51" data-wash="11" data-dry="6" data-cb="1" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">33</td>
       <td><span class="brand-badge brand-samsung">Samsung</span></td>
       <td>Samsung WD11DB8B85GB QuickDrive - 11/6 kg
@@ -1038,7 +1358,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;22&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;22&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">22</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="8000 flagship. AI Wash + QuickDrive." data-ja="8000シリーズ旗艦。AI Wash + QuickDrive。">8000シリーズ旗艦。AI Wash + QuickDrive。</span></td>
     </tr>
-    <tr data-price="539" data-mf="0" data-ps="50" data-cb="0" data-mm="1">
+    <tr data-price="539" data-mf="0" data-ps="50" data-wash="10" data-dry="6" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">34</td>
       <td><span class="brand-badge brand-heinner">Heinner</span></td>
       <td>Heinner HWDM-H10614A - 10/6 kg
@@ -1060,7 +1380,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;32&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Budget&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;32&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;低価格&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">18</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">32</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">低価格</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="579" data-mf="0" data-ps="50" data-cb="0" data-mm="1">
+    <tr data-price="579" data-mf="0" data-ps="50" data-wash="8" data-dry="8" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">35</td>
       <td><span class="brand-badge brand-hisense">Hisense</span></td>
       <td>Hisense WD5I8043BWF - 8/8 kg
@@ -1082,7 +1402,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;31&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Budget&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;31&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;低価格&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">18</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">31</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">低価格</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="949" data-mf="19" data-ps="50" data-cb="1" data-mm="0">
+    <tr data-price="949" data-mf="19" data-ps="50" data-wash="8" data-dry="5" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">36</td>
       <td><span class="brand-badge brand-samsung">Samsung</span></td>
       <td>Samsung WD80T654ABH/S2 AddWash - 8/5 kg
@@ -1105,7 +1425,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;26&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;26&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">26</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="AddWash. Manual condenser clean." data-ja="AddWash。コンデンサー手動清掃。">AddWash。コンデンサー手動清掃。</span></td>
     </tr>
-    <tr data-price="1049" data-mf="19" data-ps="50" data-cb="1" data-mm="0">
+    <tr data-price="1049" data-mf="19" data-ps="50" data-wash="9" data-dry="6" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">37</td>
       <td><span class="brand-badge brand-samsung">Samsung</span></td>
       <td>Samsung WD90T754ABT AddWash - 9/6 kg
@@ -1128,7 +1448,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;24&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;24&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">17</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">24</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="AddWash. Manual condenser clean." data-ja="AddWash。コンデンサー手動清掃。">AddWash。コンデンサー手動清掃。</span></td>
     </tr>
-    <tr data-price="543" data-mf="0" data-ps="49" data-cb="0" data-mm="1">
+    <tr data-price="543" data-mf="0" data-ps="49" data-wash="9" data-dry="6" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">38</td>
       <td><span class="brand-badge brand-hisense">Hisense</span></td>
       <td>Hisense WD3S9043BW3 - 9/6 kg
@@ -1150,7 +1470,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;32&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Budget&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;32&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;低価格&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">17</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">32</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">低価格</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="1152.9" data-mf="41" data-ps="49" data-cb="0" data-mm="1">
+    <tr data-price="1152.9" data-mf="41" data-ps="49" data-wash="7" data-dry="4" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">39</td>
       <td><span class="brand-badge brand-bosch">Bosch</span></td>
       <td>Bosch WKD24362ES - 7/4 kg
@@ -1172,7 +1492,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;12&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt" data-html-ja="容量: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;12&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;23&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt">容量: <span style="color:#9ca3af;font-weight:700">12</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">23</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">14</span>/34pt</span></td>
       <td class="summary-cell"><span data-en="Built-in Serie 4. AquaStop. Small capacity." data-ja="ビルトインSerie 4。AquaStop。小容量。">ビルトインSerie 4。AquaStop。小容量。</span></td>
     </tr>
-    <tr data-price="1569" data-mf="39" data-ps="49" data-cb="1" data-mm="0">
+    <tr data-price="1569" data-mf="39" data-ps="49" data-wash="10" data-dry="6" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">40</td>
       <td><span class="brand-badge brand-aeg">AEG</span></td>
       <td>AEG LWR9516BN4 10/6kg
@@ -1194,7 +1514,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;16&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;16&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">18</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">16</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">14</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="9000 top-tier. AbsoluteCare + AquaStop." data-ja="9000シリーズ最上位。AbsoluteCare + AquaStop。">9000シリーズ最上位。AbsoluteCare + AquaStop。</span></td>
     </tr>
-    <tr data-price="469" data-mf="0" data-ps="48" data-cb="0" data-mm="1">
+    <tr data-price="469" data-mf="0" data-ps="48" data-wash="8" data-dry="5" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">41</td>
       <td><span class="brand-badge brand-heinner">Heinner</span></td>
       <td>Heinner HWDM-H8514A - 8/5 kg
@@ -1216,7 +1536,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;33&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Budget&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;33&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;低価格&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">33</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">低価格</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="586" data-mf="0" data-ps="48" data-cb="0" data-mm="1">
+    <tr data-price="586" data-mf="0" data-ps="48" data-wash="9" data-dry="6" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">42</td>
       <td><span class="brand-badge brand-hisense">Hisense</span></td>
       <td>Hisense WD3S9043BB3 - 9/6 kg
@@ -1238,7 +1558,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;31&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Budget&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;31&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;低価格&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">17</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">31</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">低価格</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="599" data-mf="0" data-ps="48" data-cb="1" data-mm="1">
+    <tr data-price="599" data-mf="0" data-ps="48" data-wash="9" data-dry="6" data-cb="1" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">43</td>
       <td><span class="brand-badge brand-whirlpool">Whirlpool</span></td>
       <td>Whirlpool FFWDB 964489 BSV IT - 9/6 kg
@@ -1260,7 +1580,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;31&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Budget&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;31&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;低価格&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">17</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">31</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">低価格</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="770.36" data-mf="0" data-ps="48" data-cb="0" data-mm="1">
+    <tr data-price="770.36" data-mf="0" data-ps="48" data-wash="10" data-dry="7" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">44</td>
       <td><span class="brand-badge brand-whirlpool">Whirlpool</span></td>
       <td>Whirlpool FFWDD 107448 WBS IT FreshCare - 10/7 kg
@@ -1282,7 +1602,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">28</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="795.4" data-mf="0" data-ps="47" data-cb="0" data-mm="1">
+    <tr data-price="795.4" data-mf="0" data-ps="47" data-wash="10" data-dry="7" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">45</td>
       <td><span class="brand-badge brand-whirlpool">Whirlpool</span></td>
       <td>Whirlpool FFWDD 107436 BSV IT FreshCare - 10/7 kg
@@ -1304,7 +1624,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;28&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">28</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="569" data-mf="0" data-ps="46" data-cb="1" data-mm="0">
+    <tr data-price="569" data-mf="0" data-ps="46" data-wash="8" data-dry="5" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">46</td>
       <td><span class="brand-badge brand-beko">Beko</span></td>
       <td>Beko BM5DFT4841A IronFinish
@@ -1326,7 +1646,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;32&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Budget&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;32&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt; &lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;低価格&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">32</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span> <span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">低価格</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="1599" data-mf="48" data-ps="45" data-cb="0" data-mm="1">
+    <tr data-price="1599" data-mf="48" data-ps="45" data-wash="8" data-dry="5" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">47</td>
       <td><span class="brand-badge brand-miele">Miele</span></td>
       <td>Miele WTD 160 WCS - 8/5 kg
@@ -1348,7 +1668,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;16&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;16&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">16</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">14</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="Miele quality, 20yr design, AquaStop. No auto-dose/heat pump." data-ja="Miele品質、設計寿命20年、AquaStop。自動洗剤・ヒートポンプなし。">Miele品質、設計寿命20年、AquaStop。自動洗剤・ヒートポンプなし。</span></td>
     </tr>
-    <tr data-price="734.28" data-mf="0" data-ps="44" data-cb="0" data-mm="1">
+    <tr data-price="734.28" data-mf="0" data-ps="44" data-wash="8" data-dry="5" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">48</td>
       <td><span class="brand-badge brand-hisense">Hisense</span></td>
       <td>Hisense WD3S8043BW3 - 8/5 kg
@@ -1370,7 +1690,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;29&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;29&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">29</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="749" data-mf="0" data-ps="44" data-cb="0" data-mm="1">
+    <tr data-price="749" data-mf="0" data-ps="44" data-wash="8" data-dry="5" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">49</td>
       <td><span class="brand-badge brand-haier">Haier</span></td>
       <td>Haier HWD80-B14959EUDF - 8/5 kg
@@ -1392,7 +1712,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;29&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;29&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">29</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="1619" data-mf="48" data-ps="44" data-cb="1" data-mm="0">
+    <tr data-price="1619" data-mf="48" data-ps="44" data-wash="8" data-dry="5" data-cb="1" data-mm="0" data-m1="0" data-m2="0" data-m3="0" data-m4="1" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">50</td>
       <td><span class="brand-badge brand-miele">Miele</span></td>
       <td>Miele WTD 163 WCS - 8/5 kg
@@ -1414,7 +1734,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;16&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;15&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;16&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;14&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">15</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">16</span>/33pt<br>メンテ: <span style="color:#d97706;font-weight:700">14</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="Miele quality, 20yr design, AquaStop. No auto-dose/heat pump." data-ja="Miele品質、設計寿命20年、AquaStop。自動洗剤・ヒートポンプなし。">Miele品質、設計寿命20年、AquaStop。自動洗剤・ヒートポンプなし。</span></td>
     </tr>
-    <tr data-price="2664.79" data-mf="19" data-ps="42" data-cb="0" data-mm="1">
+    <tr data-price="2664.79" data-mf="19" data-ps="42" data-wash="18" data-dry="11" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="1" data-m6="1">
       <td style="font-weight:700;color:var(--text2)">51</td>
       <td><span class="brand-badge brand-samsung">Samsung</span></td>
       <td>Samsung WD18DB8995BZ - 18/11 kg
@@ -1437,7 +1757,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;33&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;33&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;9&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#059669;font-weight:700">33</span>/33pt<br>価格: <span style="color:#9ca3af;font-weight:700">0</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">9</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"><span data-en="8000 18kg. Huge capacity." data-ja="8000シリーズ18kg。超大容量。">8000シリーズ18kg。超大容量。</span></td>
     </tr>
-    <tr data-price="1073.53" data-mf="6" data-ps="41" data-cb="0" data-mm="1">
+    <tr data-price="1073.53" data-mf="6" data-ps="41" data-wash="9" data-dry="6" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">52</td>
       <td><span class="brand-badge brand-aeg">AEG</span></td>
       <td>AEG LWR7D966OB - 9/6 kg
@@ -1459,7 +1779,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;24&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;17&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#059669;font-weight:700&quot;&gt;24&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">17</span>/33pt<br>価格: <span style="color:#059669;font-weight:700">24</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="1228.37" data-mf="6" data-ps="40" data-cb="0" data-mm="1">
+    <tr data-price="1228.37" data-mf="6" data-ps="40" data-wash="10" data-dry="6" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">53</td>
       <td><span class="brand-badge brand-aeg">AEG</span></td>
       <td>AEG LWR8T166YAB - 10/6 kg
@@ -1481,7 +1801,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;22&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;22&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">18</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">22</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="1401.46" data-mf="6" data-ps="37" data-cb="0" data-mm="1">
+    <tr data-price="1401.46" data-mf="6" data-ps="37" data-wash="10" data-dry="6" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">54</td>
       <td><span class="brand-badge brand-aeg">AEG</span></td>
       <td>AEG LWR9C16BAY - 10/6 kg
@@ -1503,7 +1823,7 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
       <td class="reason-cell"><span class="i18n-html" data-html-en="Capacity: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;Price: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;Maint: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;Very large&lt;/span&gt;&lt;/div&gt;" data-html-ja="容量: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;18&lt;/span&gt;/33pt&lt;br&gt;価格: &lt;span style=&quot;color:#d97706;font-weight:700&quot;&gt;19&lt;/span&gt;/33pt&lt;br&gt;メンテ: &lt;span style=&quot;color:#9ca3af;font-weight:700&quot;&gt;0&lt;/span&gt;/34pt&lt;div style=&quot;margin-top:2px&quot;&gt;&lt;span style=&quot;background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600&quot;&gt;大容量&lt;/span&gt;&lt;/div&gt;">容量: <span style="color:#d97706;font-weight:700">18</span>/33pt<br>価格: <span style="color:#d97706;font-weight:700">19</span>/33pt<br>メンテ: <span style="color:#9ca3af;font-weight:700">0</span>/34pt<div style="margin-top:2px"><span style="background:#e0f2fe;padding:0 .3rem;border-radius:3px;font-size:.65rem;font-weight:600">大容量</span></div></span></td>
       <td class="summary-cell"></td>
     </tr>
-    <tr data-price="1409.79" data-mf="6" data-ps="37" data-cb="0" data-mm="1">
+    <tr data-price="1409.79" data-mf="6" data-ps="37" data-wash="10" data-dry="6" data-cb="0" data-mm="1" data-m1="0" data-m2="0" data-m3="0" data-m4="0" data-m5="0" data-m6="0">
       <td style="font-weight:700;color:var(--text2)">55</td>
       <td><span class="brand-badge brand-aeg">AEG</span></td>
       <td>AEG LWR9E106AB Series 9000 - 10/6 kg
@@ -1552,15 +1872,84 @@ details.m-detail .detail-body{padding:0 1.4rem 1.4rem}
   const countEl=document.getElementById('mainCount');
   const searchBox=document.getElementById('mainSearch');
   let activeFilter='all',sortCol='p_score',sortDir=-1;
+
+  // Filter elements (selects + checkboxes)
+  const priceMinEl=document.getElementById('priceMin'),priceMaxEl=document.getElementById('priceMax');
+  const washMinEl=document.getElementById('washMin'),washMaxEl=document.getElementById('washMax');
+  const dryMinEl=document.getElementById('dryMin'),dryMaxEl=document.getElementById('dryMax');
+  const mCheckboxes=document.querySelectorAll('#mChecks input[type=checkbox]');
+
+  // Filter toggle
+  const filterToggle=document.getElementById('filterToggle');
+  const filterPanel=document.getElementById('filterPanel');
+  filterToggle.addEventListener('click',()=>{
+    filterToggle.classList.toggle('open');
+    filterPanel.classList.toggle('open');
+  });
+
+  // Apply button
+  document.getElementById('applyFilterBtn').addEventListener('click',()=>{
+    applyFilter();
+    filterToggle.classList.remove('open');
+    filterPanel.classList.remove('open');
+  });
+
+  // Presets
+  function clearFilterUI(){
+    priceMinEl.value='0';priceMaxEl.value='99999';
+    washMinEl.value='0';washMaxEl.value='99';
+    dryMinEl.value='0';dryMaxEl.value='99';
+    mCheckboxes.forEach(cb=>cb.checked=false);
+  }
+  function setMCheck(val){mCheckboxes.forEach(cb=>{if(cb.value===val)cb.checked=true})}
+  document.querySelectorAll('.preset-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      clearFilterUI();
+      const p=btn.dataset.preset;
+      if(p==='family-best'){washMinEl.value='10';setMCheck('m1');setMCheck('m2')}
+      if(p==='budget'){priceMaxEl.value='800'}
+      if(p==='maint-free'){setMCheck('m1');setMCheck('m2');setMCheck('m4')}
+      if(p==='large'){washMinEl.value='11'}
+      applyFilter();
+      filterToggle.classList.remove('open');
+      filterPanel.classList.remove('open');
+    });
+  });
+
+  // Reset
+  document.getElementById('filterReset').addEventListener('click',()=>{
+    clearFilterUI();
+    document.querySelectorAll('#mainControls button').forEach(b=>b.classList.remove('active'));
+    document.querySelector('#mainControls button[data-filter=all]').classList.add('active');
+    activeFilter='all';searchBox.value='';
+    applyFilter();
+  });
+
   function updateCount(){const v=rows.filter(r=>r.style.display!=='none').length;countEl.textContent=lang==='ja'?rows.length+'\u4ef6\u4e2d'+v+'\u4ef6\u8868\u793a':'Showing '+v+' of '+rows.length+' products'}
   function applyFilter(){
     const q=searchBox.value.toLowerCase();
+    const pMin=parseFloat(priceMinEl.value),pMax=parseFloat(priceMaxEl.value);
+    const wMin=parseFloat(washMinEl.value),wMax=parseFloat(washMaxEl.value);
+    const dMin=parseFloat(dryMinEl.value),dMax=parseFloat(dryMaxEl.value);
+    const reqM=[];
+    mCheckboxes.forEach(cb=>{if(cb.checked)reqM.push(cb.value)});
+
     rows.forEach(r=>{
-      let storeOk=true;
-      if(activeFilter==='cb')storeOk=r.dataset.cb==='1';
-      if(activeFilter==='mm')storeOk=r.dataset.mm==='1';
-      const qOk=!q||r.textContent.toLowerCase().includes(q);
-      r.style.display=(storeOk&&qOk)?'':'none';
+      let ok=true;
+      // Store filter
+      if(activeFilter==='cb'&&r.dataset.cb!=='1')ok=false;
+      if(activeFilter==='mm'&&r.dataset.mm!=='1')ok=false;
+      // Search
+      if(ok&&q&&!r.textContent.toLowerCase().includes(q))ok=false;
+      // Price range
+      if(ok){const p=parseFloat(r.dataset.price);if(p<pMin||p>pMax)ok=false}
+      // Wash range
+      if(ok){const w=parseFloat(r.dataset.wash||0);if(w<wMin||w>wMax)ok=false}
+      // Dry range
+      if(ok){const d=parseFloat(r.dataset.dry||0);if(d<dMin||d>dMax)ok=false}
+      // M feature requirements
+      if(ok&&reqM.length){for(const m of reqM){if(r.dataset[m]!=='1'){ok=false;break}}}
+      r.style.display=ok?'':'none';
     });updateCount();
   }
   function applySort(){
